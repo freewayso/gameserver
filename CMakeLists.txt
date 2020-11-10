@@ -1,0 +1,68 @@
+cmake_minimum_required(VERSION 2.8.4)
+
+PROJECT(SERVER)
+
+set (CMAKE_MODULE_PATH ${SERVER_SOURCE_DIR}/CMake)
+
+CMAKE_POLICY(SET CMP0045 OLD)
+
+#set_directory_properties(PROPERTIES COMPILE_DEFINITIONS_DEBUG "_DEBUG")
+
+include(cotire)
+
+SET(CMAKE_C_COMPILER "/usr/bin/gcc")
+SET(CMAKE_CXX_COMPILER "/usr/bin/g++")
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ggdb -Wall -std=c++11 -static-libstdc++ -static-libgcc -static-libasan -D_GLIBCXX_USE_CXX11_ABI=0 -fno-omit-frame-pointer -Werror -Wno-misleading-indentation -Wno-delete-non-virtual-dtor -Wno-address -Wno-nonnull-compare -Wno-class-memaccess -Wno-switch -Wno-conversion-null -Wno-int-to-pointer-cast -Wno-unused -Wno-unused-function -Wno-unused-variable -Wno-invalid-offsetof -Wno-sign-compare")
+
+SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS} -D_DEBUG -DDEBUG -O0")
+SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -D_DEBUG -DDEBUG -DDNA_LIVE_ENV -O1")
+
+
+IF(DEFINED USE_ASA)
+	message(status "test")
+ENDIF()
+
+IF(DEFINED USE_ASAN)
+	SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fsanitize=address -DUSE_ASAN")
+	SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fsanitize=address -DUSE_ASAN")
+ENDIF()
+
+
+SET(EXECUTABLE_OUTPUT_PATH ${SERVER_BINARY_DIR}/bin)
+SET(LIBRARY_OUTPUT_PATH ${SERVER_BINARY_DIR}/lib)
+
+string(TOUPPER ${CMAKE_BUILD_TYPE} BUILD_TYPE)
+
+MESSAGE(STATUS "Build Type:" ${BUILD_TYPE})
+IF(DEFINED USE_ASAN)
+	MESSAGE(STATUS "Use Asan")
+ELSE()
+	MESSAGE(STATUS "Not Use Asan")
+ENDIF()
+
+MESSAGE(STATUS "Server Bin path: ${SERVER_BINARY_DIR}")
+MESSAGE(STATUS "Exe path: ${EXECUTABLE_OUTPUT_PATH}")
+MESSAGE(STATUS "Src path: ${SERVER_SOURCE_DIR}")
+
+INCLUDE_DIRECTORIES(${SERVER_SOURCE_DIR}/common/include )
+INCLUDE_DIRECTORIES(${SERVER_SOURCE_DIR}/common/log )
+INCLUDE_DIRECTORIES(${SERVER_SOURCE_DIR}/common/util )
+INCLUDE_DIRECTORIES(${SERVER_SOURCE_DIR}/common/network/netproc )
+INCLUDE_DIRECTORIES(${SERVER_SOURCE_DIR}/protocol )
+INCLUDE_DIRECTORIES(${SERVER_SOURCE_DIR}/thirdparty/protobuf-2.5.0/include )
+INCLUDE_DIRECTORIES(${SERVER_SOURCE_DIR}/thirdparty )
+INCLUDE_DIRECTORIES(${SERVER_SOURCE_DIR}/share/table )
+
+LINK_DIRECTORIES( ${SERVER_SOURCE_DIR}/lib )
+LINK_DIRECTORIES( ${SERVER_BINARY_DIR}/lib )
+
+AUX_SOURCE_DIRECTORY(${SERVER_SOURCE_DIR}/protocol/pb PB_SRC_LIST)
+ADD_LIBRARY(pb STATIC ${PB_SRC_LIST})
+
+ADD_SUBDIRECTORY(client)
+ADD_SUBDIRECTORY(dbserver)
+ADD_SUBDIRECTORY(gateserver)
+ADD_SUBDIRECTORY(loginserver)
+ADD_SUBDIRECTORY(hallserver)
+ADD_SUBDIRECTORY(mdcserver)
