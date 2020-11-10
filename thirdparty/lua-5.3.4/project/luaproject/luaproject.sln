@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua_lib", "lua_lib\lua_lib.vcxproj", "{F1A8A828-6FCA-4B72-8C8B-DB18B4324FB9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua\lua.vcxproj", "{DB5C64FF-68D6-463D-86F9-AB9ECD9EF3DF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua_dll", "lua_dll\lua_dll.vcxproj", "{0C1E1E6E-7FC9-4D2D-A872-942B26AD5280}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1A8A828-6FCA-4B72-8C8B-DB18B4324FB9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F1A8A828-6FCA-4B72-8C8B-DB18B4324FB9}.Debug|Win32.Build.0 = Debug|Win32
+		{F1A8A828-6FCA-4B72-8C8B-DB18B4324FB9}.Release|Win32.ActiveCfg = Release|Win32
+		{F1A8A828-6FCA-4B72-8C8B-DB18B4324FB9}.Release|Win32.Build.0 = Release|Win32
+		{DB5C64FF-68D6-463D-86F9-AB9ECD9EF3DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DB5C64FF-68D6-463D-86F9-AB9ECD9EF3DF}.Debug|Win32.Build.0 = Debug|Win32
+		{DB5C64FF-68D6-463D-86F9-AB9ECD9EF3DF}.Release|Win32.ActiveCfg = Release|Win32
+		{DB5C64FF-68D6-463D-86F9-AB9ECD9EF3DF}.Release|Win32.Build.0 = Release|Win32
+		{0C1E1E6E-7FC9-4D2D-A872-942B26AD5280}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0C1E1E6E-7FC9-4D2D-A872-942B26AD5280}.Debug|Win32.Build.0 = Debug|Win32
+		{0C1E1E6E-7FC9-4D2D-A872-942B26AD5280}.Release|Win32.ActiveCfg = Release|Win32
+		{0C1E1E6E-7FC9-4D2D-A872-942B26AD5280}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,87 @@
+﻿生成启动时间为 2018/7/10 20:13:29。
+     1>项目“D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\lua_lib\lua_lib.vcxproj”在节点 2 上(build 个目标)。
+     1>PrepareForBuild:
+         正在创建目录“D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\Debug\”。
+       InitializeBuildStatus:
+         正在创建“Debug\lua_lib.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\src\lapi.c ..\..\..\src\lauxlib.c ..\..\..\src\lbaselib.c ..\..\..\src\lbitlib.c ..\..\..\src\lcode.c ..\..\..\src\lcorolib.c ..\..\..\src\lctype.c ..\..\..\src\ldblib.c ..\..\..\src\ldebug.c ..\..\..\src\ldo.c ..\..\..\src\ldump.c ..\..\..\src\lfunc.c ..\..\..\src\lgc.c ..\..\..\src\linit.c ..\..\..\src\liolib.c ..\..\..\src\llex.c ..\..\..\src\lmathlib.c ..\..\..\src\lmem.c ..\..\..\src\loadlib.c ..\..\..\src\lobject.c ..\..\..\src\lopcodes.c ..\..\..\src\loslib.c ..\..\..\src\lparser.c ..\..\..\src\lstate.c ..\..\..\src\lstring.c ..\..\..\src\lstrlib.c ..\..\..\src\ltable.c ..\..\..\src\ltablib.c ..\..\..\src\ltm.c ..\..\..\src\lundump.c ..\..\..\src\lutf8lib.c ..\..\..\src\lvm.c ..\..\..\src\lzio.c
+         lzio.c
+         lvm.c
+         lutf8lib.c
+         lundump.c
+         ltm.c
+         ltablib.c
+         ltable.c
+         lstrlib.c
+         lstring.c
+         lstate.c
+         lparser.c
+         loslib.c
+         lopcodes.c
+         lobject.c
+         loadlib.c
+         lmem.c
+         lmathlib.c
+         llex.c
+         liolib.c
+         linit.c
+         正在生成代码...
+         正在编译...
+         lgc.c
+         lfunc.c
+         ldump.c
+         ldo.c
+         ldebug.c
+         ldblib.c
+         lctype.c
+         lcorolib.c
+         lcode.c
+         lbitlib.c
+         lbaselib.c
+         lauxlib.c
+         lapi.c
+         正在生成代码...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\Debug\lua53.lib" /NOLOGO Debug\lapi.obj
+         Debug\lauxlib.obj
+         Debug\lbaselib.obj
+         Debug\lbitlib.obj
+         Debug\lcode.obj
+         Debug\lcorolib.obj
+         Debug\lctype.obj
+         Debug\ldblib.obj
+         Debug\ldebug.obj
+         Debug\ldo.obj
+         Debug\ldump.obj
+         Debug\lfunc.obj
+         Debug\lgc.obj
+         Debug\linit.obj
+         Debug\liolib.obj
+         Debug\llex.obj
+         Debug\lmathlib.obj
+         Debug\lmem.obj
+         Debug\loadlib.obj
+         Debug\lobject.obj
+         Debug\lopcodes.obj
+         Debug\loslib.obj
+         Debug\lparser.obj
+         Debug\lstate.obj
+         Debug\lstring.obj
+         Debug\lstrlib.obj
+         Debug\ltable.obj
+         Debug\ltablib.obj
+         Debug\ltm.obj
+         Debug\lundump.obj
+         Debug\lutf8lib.obj
+         Debug\lvm.obj
+         Debug\lzio.obj
+         lua_lib.vcxproj -> D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\Debug\lua53.lib
+       FinalizeBuildStatus:
+         正在删除文件“Debug\lua_lib.unsuccessfulbuild”。
+         正在对“Debug\lua_lib.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\lua_lib\lua_lib.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.45

@@ -1,0 +1,51 @@
+﻿生成启动时间为 2018/7/10 20:15:13。
+     1>项目“D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\lua_dll\lua_dll.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\lua_dll.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         所有输出均为最新。
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\Debug\lua_dll.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\lua_dll.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\Debug\lua_dll.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\Debug\lua_dll.lib" /MACHINE:X86 /DLL Debug\lapi.obj
+         Debug\lauxlib.obj
+         Debug\lbaselib.obj
+         Debug\lbitlib.obj
+         Debug\lcode.obj
+         Debug\lcorolib.obj
+         Debug\lctype.obj
+         Debug\ldblib.obj
+         Debug\ldebug.obj
+         Debug\ldo.obj
+         Debug\ldump.obj
+         Debug\lfunc.obj
+         Debug\lgc.obj
+         Debug\linit.obj
+         Debug\liolib.obj
+         Debug\llex.obj
+         Debug\lmathlib.obj
+         Debug\lmem.obj
+         Debug\loadlib.obj
+         Debug\lobject.obj
+         Debug\lopcodes.obj
+         Debug\loslib.obj
+         Debug\lparser.obj
+         Debug\lstate.obj
+         Debug\lstring.obj
+         Debug\lstrlib.obj
+         Debug\ltable.obj
+         Debug\ltablib.obj
+         Debug\ltm.obj
+         Debug\lundump.obj
+         Debug\lutf8lib.obj
+         Debug\lvm.obj
+         Debug\lzio.obj
+         lua_dll.vcxproj -> D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\Debug\lua_dll.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\Debug\lua_dll.dll.manifest" /manifest Debug\lua_dll.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Debug\lua_dll.unsuccessfulbuild”。
+         正在对“Debug\lua_dll.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\workspace\lua_test\thirdpart\lua-5.3.4\project\luaproject\lua_dll\lua_dll.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.27
