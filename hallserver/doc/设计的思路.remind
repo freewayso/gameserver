@@ -1,0 +1,14 @@
+
+1、大厅服务器数据cache到redis 
+2、dbserver 
+redis key设计
+actor actorid dirty:1  {ActorName:"坑爹的小明","sex"}
+task actorid dirty:1  {ActorName:"坑爹的小明","sex"}
+task friend dirty:1  {ActorId:1,ActorName:"坑爹的小明",sex:"boy",}
+
+//dbserver 这边开线程负责读写dirty为1的，把数据写打mysql
+
+
+
+
+
