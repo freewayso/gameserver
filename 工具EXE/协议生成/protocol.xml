@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ArrayOfPGProtocol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PGProtocol>
+    <Name>createnpc</Name>
+    <ProtoType>61586</ProtoType>
+    <Dir>npc</Dir>
+    <From>Client [客户端]</From>
+    <To>TGate Server [网关]</To>
+    <MemberType>npcdata</MemberType>
+  </PGProtocol>
+  <PGProtocol>
+    <Name>LoginSession2GateNtf</Name>
+    <ProtoType>56089</ProtoType>
+    <Dir>login</Dir>
+    <From>Login Server [登录]</From>
+    <To>TGate Server [网关]</To>
+    <MemberType>LoginSession2Gate</MemberType>
+  </PGProtocol>
+  <PGProtocol>
+    <Name>LoginOutNtf</Name>
+    <ProtoType>59474</ProtoType>
+    <Dir>login</Dir>
+    <From>TGate Server [网关]</From>
+    <To>Hall Server [大厅服务器]</To>
+    <MemberType>LoginOutData</MemberType>
+  </PGProtocol>
+  <PGProtocol>
+    <Name>Heartbeat</Name>
+    <ProtoType>65080</ProtoType>
+    <Dir>game</Dir>
+    <From>TGate Server [网关]</From>
+    <To>Client [客户端]</To>
+    <MemberType>HeartbeatData</MemberType>
+  </PGProtocol>
+  <PGProtocol>
+    <Name>CancelMatch</Name>
+    <ProtoType>56530</ProtoType>
+    <Dir>game</Dir>
+    <From>Client [客户端]</From>
+    <To>Hall Server [大厅服务器]</To>
+    <MemberType>CancelMatchArg</MemberType>
+  </PGProtocol>
+</ArrayOfPGProtocol>

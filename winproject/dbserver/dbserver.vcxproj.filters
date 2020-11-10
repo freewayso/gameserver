@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="protocol">
+      <UniqueIdentifier>{a07a1c74-2d87-47f2-b189-b888946d0611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="share">
+      <UniqueIdentifier>{b46c8bdd-952c-46e1-8944-714efc167765}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network">
+      <UniqueIdentifier>{6c49414f-337d-4d2d-ac8d-b3be7a79a254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="redis">
+      <UniqueIdentifier>{627aea1f-c54e-4060-bb82-93eb6503844a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="redis\redistask">
+      <UniqueIdentifier>{af3f32de-9c42-497a-b9cf-605f43b31977}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mysql">
+      <UniqueIdentifier>{a54a6c2a-170a-4119-9861-576e3b9bc7ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\common">
+      <UniqueIdentifier>{06f962ef-6daa-4061-8654-277a9e6ea72b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\db">
+      <UniqueIdentifier>{29d1b5cf-2f45-4db3-934d-dc7dced5cca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mysql\task">
+      <UniqueIdentifier>{626d2682-c1ec-4415-b61d-0cdf43a6e9b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="share\utildb">
+      <UniqueIdentifier>{f904c5d9-689c-45b1-bbc0-b4ff1a9d8f03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="profiler">
+      <UniqueIdentifier>{37a574da-89e9-4332-86a7-1de6aa313128}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\game">
+      <UniqueIdentifier>{e3cb1d03-0572-43b6-906d-7495dbcd84fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cache">
+      <UniqueIdentifier>{b5540695-9aa7-4516-b522-a97f6fad0d13}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dbserver\config.cpp" />
+    <ClCompile Include="..\..\dbserver\main.cpp" />
+    <ClCompile Include="..\..\dbserver\ptcregister.cpp" />
+    <ClCompile Include="..\..\share\DBInfo.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\SQLStmt.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\XCommon.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\gametime.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\XRandom.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\dbutil.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\redis\mywin32fixes.c" />
+    <ClCompile Include="..\..\dbserver\redis\redismgr.cpp">
+      <Filter>redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\redis\redisthread.cpp">
+      <Filter>redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\redis\redishelper.cpp">
+      <Filter>redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\protocol\sendonly.cpp">
+      <Filter>protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\gettimeofday.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\network\halllink.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\mysql\mysqlmgr.cpp">
+      <Filter>mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\mysql\mysqlthread.cpp">
+      <Filter>mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\protocol\common\rpch2d_registerhalltodb.cpp">
+      <Filter>protocol\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\utildb\sqlbuilder.cpp">
+      <Filter>share\utildb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\dbprocess.cpp" />
+    <ClCompile Include="..\..\dbserver\profile\dbprofiler.cpp">
+      <Filter>profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\profile\profiler.cpp">
+      <Filter>profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\mysql\task\actorquerytask.cpp">
+      <Filter>mysql\task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\protocol\game\rpch2d_queryactordb.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\mysql\task\actorinserttask.cpp">
+      <Filter>mysql\task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\protocol\game\rpch2d_createactorhall2db.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\mysql\task\actorupdatetask.cpp">
+      <Filter>mysql\task</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\protocol\game\rpch2d_updateactordata.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\cache\memorysyncdb.cpp">
+      <Filter>cache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\redis\redistask\actordatawritetask.cpp">
+      <Filter>redis\redistask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\redis\redistask\actordatareadtask.cpp">
+      <Filter>redis\redistask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dbserver\cache\dbeventconv.cpp">
+      <Filter>cache</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\dbserver\config.h" />
+    <ClInclude Include="..\..\dbserver\minidump.h" />
+    <ClInclude Include="..\..\dbserver\pch.h" />
+    <ClInclude Include="..\..\dbserver\ptcregister.h" />
+    <ClInclude Include="..\..\share\DBInfo.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\SQLStmt.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\XCommon.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\gametime.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\XRandom.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\dbutil.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\redis\hiredis.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\redis\win32fixes.h" />
+    <ClInclude Include="..\..\dbserver\redis\redismgr.h">
+      <Filter>redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\redis\redisthread.h">
+      <Filter>redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\redis\redishelper.h">
+      <Filter>redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\gettimeofday.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\network\halllink.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\mysql\mysqlmgr.h">
+      <Filter>mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\mysql\mysqlthread.h">
+      <Filter>mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\utildb\sqlbuilder.h">
+      <Filter>share\utildb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\utildb\sqljoin.h">
+      <Filter>share\utildb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\dbprocess.h" />
+    <ClInclude Include="..\..\dbserver\profile\dbprofiler.h">
+      <Filter>profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\profile\profiler.h">
+      <Filter>profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\mysql\task\actorquerytask.h">
+      <Filter>mysql\task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\mysql\task\actorinserttask.h">
+      <Filter>mysql\task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\mysql\task\actorupdatetask.h">
+      <Filter>mysql\task</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\cache\memorysyncdb.h">
+      <Filter>cache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\redis\redistask\actordatawritetask.h">
+      <Filter>redis\redistask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\redis\redistask\actordatareadtask.h">
+      <Filter>redis\redistask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dbserver\cache\dbeventconv.h">
+      <Filter>cache</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

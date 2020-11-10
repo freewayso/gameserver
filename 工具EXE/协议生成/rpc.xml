@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<ArrayOfPGRpc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PGRpc>
+    <Name>RegisterGateToHall</Name>
+    <ProtoType>4002</ProtoType>
+    <Dir>common</Dir>
+    <timeout>5000</timeout>
+    <From>TGate Server [网关]</From>
+    <To>Hall Server [游戏服务器]</To>
+    <Arg>RegisterGateToHallReq</Arg>
+    <Res>RegisterGateToHallRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>RegisterHallToDb</Name>
+    <ProtoType>10080</ProtoType>
+    <Dir>common</Dir>
+    <timeout>5000</timeout>
+    <From>Hall Server [游戏服务器]</From>
+    <To>Db Server [数据库]</To>
+    <Arg>RegisterHallToDbReq</Arg>
+    <Res>RegisterHallToDbRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>UpdateActorData</Name>
+    <ProtoType>32066</ProtoType>
+    <Dir>game</Dir>
+    <timeout>5000</timeout>
+    <From>Hall Server [大厅服务器]</From>
+    <To>Db Server [数据库]</To>
+    <Arg>UpdateActorDataArg</Arg>
+    <Res>UpdateActorDataRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>RegisterGate2Login</Name>
+    <ProtoType>8654</ProtoType>
+    <Dir>common</Dir>
+    <timeout>5000</timeout>
+    <From>TGate Server [网关]</From>
+    <To>Login Server [登录]</To>
+    <Arg>RegisterGateToLoginArg</Arg>
+    <Res>RegisterGateToLoginRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>LoginReq</Name>
+    <ProtoType>11211</ProtoType>
+    <Dir>login</Dir>
+    <timeout>20000</timeout>
+    <From>Client [客户端]</From>
+    <To>Login Server [登录]</To>
+    <Arg>LoginDataArg</Arg>
+    <Res>LoginDataRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>EnterGameTest</Name>
+    <ProtoType>44912</ProtoType>
+    <Dir>game</Dir>
+    <timeout>5000</timeout>
+    <From>Client [客户端]</From>
+    <To>TGate Server [网关]</To>
+    <Arg>EnterGameArg</Arg>
+    <Res>EnterGameRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>GetActors</Name>
+    <ProtoType>11146</ProtoType>
+    <Dir>game</Dir>
+    <timeout>5000</timeout>
+    <From>TGate Server [网关]</From>
+    <To>Hall Server [大厅服务器]</To>
+    <Arg>ActorDataArg</Arg>
+    <Res>ActorDataRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>QueryActorDb</Name>
+    <ProtoType>38460</ProtoType>
+    <Dir>game</Dir>
+    <timeout>5000</timeout>
+    <From>Hall Server [大厅服务器]</From>
+    <To>Db Server [数据库]</To>
+    <Arg>ActorDataArg</Arg>
+    <Res>ActorDataRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>CreateActorGate2Hall</Name>
+    <ProtoType>19439</ProtoType>
+    <Dir>game</Dir>
+    <timeout>5000</timeout>
+    <From>TGate Server [网关]</From>
+    <To>Hall Server [大厅服务器]</To>
+    <Arg>CreateActorReq</Arg>
+    <Res>CreateActorRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>CreateActorCli2Gate</Name>
+    <ProtoType>60776</ProtoType>
+    <Dir>game</Dir>
+    <timeout>5000</timeout>
+    <From>Client [客户端]</From>
+    <To>TGate Server [网关]</To>
+    <Arg>CreateActorReq</Arg>
+    <Res>CreateActorRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>CreateActorHall2Db</Name>
+    <ProtoType>48460</ProtoType>
+    <Dir>game</Dir>
+    <timeout>5000</timeout>
+    <From>Hall Server [大厅服务器]</From>
+    <To>Db Server [数据库]</To>
+    <Arg>CreateActorReq</Arg>
+    <Res>CreateActorRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>ClientTokenAuth</Name>
+    <ProtoType>49697</ProtoType>
+    <Dir>game</Dir>
+    <timeout>5000</timeout>
+    <From>Client [客户端]</From>
+    <To>TGate Server [网关]</To>
+    <Arg>ClientAuthArg</Arg>
+    <Res>ClientAuthRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>RegHall2Mdc</Name>
+    <ProtoType>12160</ProtoType>
+    <Dir>game</Dir>
+    <timeout>5000</timeout>
+    <From>Hall Server [大厅服务器]</From>
+    <To>Mdc Server [战斗管理服务器]</To>
+    <Arg>RegisterHallToDcmArg</Arg>
+    <Res>RegisterHallToDcmRes</Res>
+  </PGRpc>
+  <PGRpc>
+    <Name>StartMatch</Name>
+    <ProtoType>62459</ProtoType>
+    <Dir>game</Dir>
+    <timeout>5000</timeout>
+    <From>Client [客户端]</From>
+    <To>Hall Server [大厅服务器]</To>
+    <Arg>StartMatchArg</Arg>
+    <Res>StartMatchRes</Res>
+  </PGRpc>
+</ArrayOfPGRpc>

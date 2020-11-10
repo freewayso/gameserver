@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{917D21AE-1183-4EB6-A8A9-91BBEB6AD912}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>dbserver</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)..\..\exe\</OutDir>
+    <EmbedManifest>false</EmbedManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../protocol;../../common/include;../../dbserver/protocol;../../dbserver/;../../thirdparty/tinyxml2;../../thirdparty/;../../thirdparty/protobuf-2.5.0/include;../../share;../../thirdparty/mysql/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../lib;../../thirdparty/mysql/lib/vs10/;$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>common.lib;mysqlclient.lib;ws2_32.lib;libprotobuf.lib;libiconv.lib;zlib.lib;iocp.lib;mysql.lib;hiredis.lib;libpb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\dbserver\cache\memorysyncdb.cpp" />
+    <ClCompile Include="..\..\dbserver\cache\dbeventconv.cpp" />
+    <ClCompile Include="..\..\dbserver\mysql\mysqlmgr.cpp" />
+    <ClCompile Include="..\..\dbserver\mysql\mysqlthread.cpp" />
+    <ClCompile Include="..\..\dbserver\mysql\task\actorinserttask.cpp" />
+    <ClCompile Include="..\..\dbserver\mysql\task\actorquerytask.cpp" />
+    <ClCompile Include="..\..\dbserver\dbprocess.cpp" />
+    <ClCompile Include="..\..\dbserver\config.cpp" />
+    <ClCompile Include="..\..\dbserver\main.cpp" />
+    <ClCompile Include="..\..\dbserver\mysql\task\actorupdatetask.cpp" />
+    <ClCompile Include="..\..\dbserver\network\halllink.cpp" />
+    <ClCompile Include="..\..\dbserver\profile\dbprofiler.cpp" />
+    <ClCompile Include="..\..\dbserver\protocol\sendonly.cpp" />
+    <ClCompile Include="..\..\dbserver\ptcregister.cpp" />
+    <ClCompile Include="..\..\dbserver\redis\redishelper.cpp" />
+    <ClCompile Include="..\..\dbserver\redis\redismgr.cpp" />
+    <ClCompile Include="..\..\dbserver\redis\redistask\actordatareadtask.cpp" />
+    <ClCompile Include="..\..\dbserver\redis\redistask\actordatawritetask.cpp" />
+    <ClCompile Include="..\..\dbserver\redis\redisthread.cpp" />
+    <ClCompile Include="..\..\share\DBInfo.cpp" />
+    <ClCompile Include="..\..\share\profile\profiler.cpp" />
+    <ClCompile Include="..\..\share\redis\mywin32fixes.c" />
+    <ClCompile Include="..\..\share\SQLStmt.cpp" />
+    <ClCompile Include="..\..\share\utildb\sqlbuilder.cpp" />
+    <ClCompile Include="..\..\share\util\dbutil.cpp" />
+    <ClCompile Include="..\..\share\util\gametime.cpp" />
+    <ClCompile Include="..\..\share\util\gettimeofday.cpp" />
+    <ClCompile Include="..\..\share\util\XCommon.cpp" />
+    <ClCompile Include="..\..\share\util\XRandom.cpp" />
+    <ClCompile Include="..\..\dbserver\protocol\common\rpch2d_registerhalltodb.cpp" />
+    <ClCompile Include="..\..\dbserver\protocol\game\rpch2d_queryactordb.cpp" />
+    <ClCompile Include="..\..\dbserver\protocol\game\rpch2d_createactorhall2db.cpp" />
+    <ClCompile Include="..\..\dbserver\protocol\game\rpch2d_updateactordata.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\dbserver\cache\memorysyncdb.h" />
+    <ClInclude Include="..\..\dbserver\cache\dbeventconv.h" />
+    <ClInclude Include="..\..\dbserver\mysql\mysqlmgr.h" />
+    <ClInclude Include="..\..\dbserver\mysql\mysqlthread.h" />
+    <ClInclude Include="..\..\dbserver\mysql\task\actorinserttask.h" />
+    <ClInclude Include="..\..\dbserver\mysql\task\actorquerytask.h" />
+    <ClInclude Include="..\..\dbserver\dbprocess.h" />
+    <ClInclude Include="..\..\dbserver\config.h" />
+    <ClInclude Include="..\..\dbserver\minidump.h" />
+    <ClInclude Include="..\..\dbserver\mysql\task\actorupdatetask.h" />
+    <ClInclude Include="..\..\dbserver\network\halllink.h" />
+    <ClInclude Include="..\..\dbserver\pch.h" />
+    <ClInclude Include="..\..\dbserver\profile\dbprofiler.h" />
+    <ClInclude Include="..\..\dbserver\ptcregister.h" />
+    <ClInclude Include="..\..\dbserver\redis\redishelper.h" />
+    <ClInclude Include="..\..\dbserver\redis\redismgr.h" />
+    <ClInclude Include="..\..\dbserver\redis\redistask\actordatareadtask.h" />
+    <ClInclude Include="..\..\dbserver\redis\redistask\actordatawritetask.h" />
+    <ClInclude Include="..\..\dbserver\redis\redisthread.h" />
+    <ClInclude Include="..\..\share\DBInfo.h" />
+    <ClInclude Include="..\..\share\profile\profiler.h" />
+    <ClInclude Include="..\..\share\redis\hiredis.h" />
+    <ClInclude Include="..\..\share\redis\win32fixes.h" />
+    <ClInclude Include="..\..\share\SQLStmt.h" />
+    <ClInclude Include="..\..\share\utildb\sqlbuilder.h" />
+    <ClInclude Include="..\..\share\utildb\sqljoin.h" />
+    <ClInclude Include="..\..\share\util\dbutil.h" />
+    <ClInclude Include="..\..\share\util\gametime.h" />
+    <ClInclude Include="..\..\share\util\gettimeofday.h" />
+    <ClInclude Include="..\..\share\util\XCommon.h" />
+    <ClInclude Include="..\..\share\util\XRandom.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

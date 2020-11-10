@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\protocol\pb\enum.pb.cc" />
+    <ClCompile Include="..\..\protocol\pb\project.pb.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\protocol\pb\enum.pb.h" />
+    <ClInclude Include="..\..\protocol\pb\project.pb.h" />
+  </ItemGroup>
+</Project>

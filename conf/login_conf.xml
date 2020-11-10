@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LoginServer name="login" id="100" useOpenID="0" debug="0"> 
+	<DB ip="10.0.128.229" user="root" password="123u123u" port="3306" database="cbr"/>
+	<Listen>
+		<peer ip="0.0.0.0" port="25001" handler="clientlink" sendBufSize="0" recvBufSize="0"/>
+		<peer ip="0.0.0.0" port="26001" handler="gatelink" sendBufSize="0" recvBufSize="0"/>
+	</Listen>
+	<LogType  file="1" console="1" rolltype="day"/>
+	<LogLevel info="1" debug="1" warn="1" error="1" fatal="1"/>
+	<LoginControl max="500" />
+	<RootPath dir="hallconf"/>
+	<KeepAlive  enabled="0"/>
+</LoginServer>

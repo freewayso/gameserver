@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="network">
+      <UniqueIdentifier>{32631245-d88e-42f3-8106-a66ad980200f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol">
+      <UniqueIdentifier>{637bd5cd-3669-46b1-aa43-6856f443f2fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="share">
+      <UniqueIdentifier>{c196002a-5a66-4f82-a601-1f6a10cc1080}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="share\util">
+      <UniqueIdentifier>{2dbad9e4-7c18-47b7-be0f-662430c83825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hall">
+      <UniqueIdentifier>{b91a40aa-c6d2-4eb4-a860-dad1b506bc68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\skymall">
+      <UniqueIdentifier>{68b82262-a646-4476-8e55-08762d0ec3c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\ss">
+      <UniqueIdentifier>{3297276f-101b-4dac-8c1b-ec87c069f060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\common">
+      <UniqueIdentifier>{2f81363b-998f-44d9-93ff-88b342fb542f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\db">
+      <UniqueIdentifier>{a49bcdd1-5939-429b-8e6a-18a7e525e8a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\game">
+      <UniqueIdentifier>{0cd9767e-bf0d-4d89-bdba-f710b7c49c3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="actor">
+      <UniqueIdentifier>{da656056-ee32-46bf-bf95-4a57bab7f68b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\login">
+      <UniqueIdentifier>{d232208d-865a-4618-b6c9-611198e44296}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="redis">
+      <UniqueIdentifier>{399c9c9a-fea3-4094-b2e7-5c2a54bc1ab1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="redis\redistask">
+      <UniqueIdentifier>{28d966af-44e7-4724-9d74-7b7949cf774a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="friend">
+      <UniqueIdentifier>{bef03bd8-cf72-425f-a351-926c57103672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="robot">
+      <UniqueIdentifier>{77a48943-6c6a-4419-b11d-7d80efd97849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="match">
+      <UniqueIdentifier>{1c5a7d0c-6a7c-4f1a-b942-9c7cb1f389cd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\share\util\XCommon.cpp">
+      <Filter>share\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\XRandom.cpp">
+      <Filter>share\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\gametime.cpp">
+      <Filter>share\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\gettimeofday.cpp">
+      <Filter>share\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\network\gatelink.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\hall\hallmgr.cpp">
+      <Filter>hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\network\dblink.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\config.cpp" />
+    <ClCompile Include="..\..\hallserver\main.cpp" />
+    <ClCompile Include="..\..\hallserver\ptcregister.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\common\rpct2h_registergatetohall.cpp">
+      <Filter>protocol\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\protocol\common\rpch2d_registerhalltodb.cpp">
+      <Filter>protocol\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\protocol\game\rpct2h_getactors.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\actor\actor.cpp">
+      <Filter>actor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\actor\actormgr.cpp">
+      <Filter>actor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\protocol\game\rpch2d_queryactordb.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\protocol\login\ptct2h_loginoutntf.cpp">
+      <Filter>protocol\login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\protocol\game\rpct2h_createactorgate2hall.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\protocol\game\rpch2d_createactorhall2db.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\protocol\game\rpch2d_updateactordata.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\redis\redishelper.cpp">
+      <Filter>redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\redis\redismgr.cpp">
+      <Filter>redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\redis\redisthread.cpp">
+      <Filter>redis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\redis\mywin32fixes.c" />
+    <ClCompile Include="..\..\hallserver\hprocess.cpp" />
+    <ClCompile Include="..\..\hallserver\redis\task\actorreadtask.cpp">
+      <Filter>redis\redistask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\friend\friend.cpp">
+      <Filter>friend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\friend\friendmgr.cpp">
+      <Filter>friend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\protocol\game\rpch2m_reghall2mdc.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\protocol\game\rpcc2h_startmatch.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\network\mdclink.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hallserver\protocol\game\ptcc2h_cancelmatch.cpp">
+      <Filter>protocol\game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\share\util\XCommon.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\XRandom.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\gametime.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\gettimeofday.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\utilsingleton.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\utilstring.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\network\gatelink.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\hall\hallmgr.h">
+      <Filter>hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\network\dblink.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\config.h" />
+    <ClInclude Include="..\..\hallserver\foreach.h" />
+    <ClInclude Include="..\..\hallserver\minidump.h" />
+    <ClInclude Include="..\..\hallserver\pch.h" />
+    <ClInclude Include="..\..\hallserver\ptcregister.h" />
+    <ClInclude Include="..\..\hallserver\actor\actor.h">
+      <Filter>actor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\actor\actormgr.h">
+      <Filter>actor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\redis\redishelper.h">
+      <Filter>redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\redis\redismgr.h">
+      <Filter>redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\redis\redisthread.h">
+      <Filter>redis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\redis\win32fixes.h" />
+    <ClInclude Include="..\..\hallserver\hprocess.h" />
+    <ClInclude Include="..\..\hallserver\redis\task\actorreadtask.h">
+      <Filter>redis\redistask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\friend\friend.h">
+      <Filter>friend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\friend\friendmgr.h">
+      <Filter>friend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hallserver\network\mdclink.h">
+      <Filter>network</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

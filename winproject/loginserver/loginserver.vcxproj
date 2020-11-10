@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C353746D-34FA-45C4-9B70-4BA6718337D6}</ProjectGuid>
+    <RootNamespace>loginserver</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\..\exe\</OutDir>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../protocol;../../common/include;../../loginserver/network;../../loginserver/protocol;../../loginserver/;../../thirdparty/tinyxml2;../../thirdparty/protobuf-2.5.0/include;../../thirdparty/mysql/include;../../thirdparty;../../thirdparty/curl-7.40.0/include;../../share;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../lib;../../thirdparty/mysql/lib/vs10/;../../thirdparty/curl-7.40.0/lib;$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl.lib;common.lib;ws2_32.lib;libprotobuf.lib;libiconv.lib;zlib.lib;mysqlclient.lib;iocp.lib;libpb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\loginserver\config.cpp" />
+    <ClCompile Include="..\..\loginserver\dbtask\createactortask.cpp" />
+    <ClCompile Include="..\..\loginserver\dbtask\insertusertask.cpp" />
+    <ClCompile Include="..\..\loginserver\dbtask\queryusertask.cpp" />
+    <ClCompile Include="..\..\loginserver\dbtask\userauth.cpp" />
+    <ClCompile Include="..\..\loginserver\login\mysqlmgr.cpp" />
+    <ClCompile Include="..\..\loginserver\login\mysqlthread.cpp" />
+    <ClCompile Include="..\..\loginserver\login\verifymgr.cpp" />
+    <ClCompile Include="..\..\loginserver\main.cpp" />
+    <ClCompile Include="..\..\loginserver\network\clientlink.cpp" />
+    <ClCompile Include="..\..\loginserver\network\gatelink.cpp" />
+    <ClCompile Include="..\..\loginserver\process.cpp" />
+    <ClCompile Include="..\..\loginserver\protocol\sendonly.cpp" />
+    <ClCompile Include="..\..\loginserver\ptcregister.cpp" />
+    <ClCompile Include="..\..\loginserver\session\sessionmgr.cpp" />
+    <ClCompile Include="..\..\share\DBInfo.cpp" />
+    <ClCompile Include="..\..\share\HashUtil.cpp" />
+    <ClCompile Include="..\..\share\profile\profiler.cpp" />
+    <ClCompile Include="..\..\share\SQLStmt.cpp" />
+    <ClCompile Include="..\..\share\SQLThread.cpp" />
+    <ClCompile Include="..\..\share\utildb\sqlbuilder.cpp" />
+    <ClCompile Include="..\..\share\util\gametime.cpp" />
+    <ClCompile Include="..\..\share\util\gettimeofday.cpp" />
+    <ClCompile Include="..\..\share\util\jsonutil.cpp" />
+    <ClCompile Include="..\..\share\util\UtilEncode.cpp" />
+    <ClCompile Include="..\..\share\util\XCommon.cpp" />
+    <ClCompile Include="..\..\share\util\XRandom.cpp" />
+    <ClCompile Include="..\..\share\WebFetchThread.cpp" />
+    <ClCompile Include="..\..\loginserver\protocol\common\rpct2l_registergate2login.cpp" />
+    <ClCompile Include="..\..\loginserver\protocol\login\rpcc2l_loginreq.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\loginserver\config.h" />
+    <ClInclude Include="..\..\loginserver\dbtask\createactortask.h" />
+    <ClInclude Include="..\..\loginserver\dbtask\insertusertask.h" />
+    <ClInclude Include="..\..\loginserver\dbtask\queryusertask.h" />
+    <ClInclude Include="..\..\loginserver\dbtask\userauth.h" />
+    <ClInclude Include="..\..\loginserver\login\mysqlmgr.h" />
+    <ClInclude Include="..\..\loginserver\login\mysqlthread.h" />
+    <ClInclude Include="..\..\loginserver\login\verifymgr.h" />
+    <ClInclude Include="..\..\loginserver\minidump.h" />
+    <ClInclude Include="..\..\loginserver\network\clientlink.h" />
+    <ClInclude Include="..\..\loginserver\network\gatelink.h" />
+    <ClInclude Include="..\..\loginserver\pch.h" />
+    <ClInclude Include="..\..\loginserver\process.h" />
+    <ClInclude Include="..\..\loginserver\ptcregister.h" />
+    <ClInclude Include="..\..\loginserver\session\sessionmgr.h" />
+    <ClInclude Include="..\..\share\DBInfo.h" />
+    <ClInclude Include="..\..\share\HashUtil.h" />
+    <ClInclude Include="..\..\share\profile\profiler.h" />
+    <ClInclude Include="..\..\share\SQLStmt.h" />
+    <ClInclude Include="..\..\share\SQLTask.h" />
+    <ClInclude Include="..\..\share\SQLThread.h" />
+    <ClInclude Include="..\..\share\utildb\sqlbuilder.h" />
+    <ClInclude Include="..\..\share\util\atomic.h" />
+    <ClInclude Include="..\..\share\util\gametime.h" />
+    <ClInclude Include="..\..\share\util\gettimeofday.h" />
+    <ClInclude Include="..\..\share\util\jsonutil.h" />
+    <ClInclude Include="..\..\share\util\timelist.h" />
+    <ClInclude Include="..\..\share\util\UtilEncode.h" />
+    <ClInclude Include="..\..\share\util\XCommon.h" />
+    <ClInclude Include="..\..\share\util\XRandom.h" />
+    <ClInclude Include="..\..\share\WebFetchThread.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

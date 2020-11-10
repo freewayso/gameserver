@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9C7147C4-B274-47E4-AE8D-B9241EEEB4A5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>audioserver</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\exe\</OutDir>
+    <EmbedManifest>false</EmbedManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../thirdparty/;../../protocol;../../hallserver/network;../../hallserver/protocol;../../hallserver/;../../thirdparty/tinyxml2;../../thirdparty/protobuf-2.5.0/include;../../share;../../share/table;../../share/util;../../common/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>common.lib;ws2_32.lib;libprotobuf.lib;libiconv.lib;zlib.lib;iocp.lib;hiredis.lib;libpb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../lib;$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\hallserver\actor\actor.cpp" />
+    <ClCompile Include="..\..\hallserver\actor\actormgr.cpp" />
+    <ClCompile Include="..\..\hallserver\config.cpp" />
+    <ClCompile Include="..\..\hallserver\friend\friend.cpp" />
+    <ClCompile Include="..\..\hallserver\friend\friendmgr.cpp" />
+    <ClCompile Include="..\..\hallserver\hall\hallmgr.cpp" />
+    <ClCompile Include="..\..\hallserver\main.cpp" />
+    <ClCompile Include="..\..\hallserver\network\dblink.cpp" />
+    <ClCompile Include="..\..\hallserver\network\gatelink.cpp" />
+    <ClCompile Include="..\..\hallserver\hprocess.cpp" />
+    <ClCompile Include="..\..\hallserver\network\mdclink.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\login\ptct2h_loginoutntf.cpp" />
+    <ClCompile Include="..\..\hallserver\ptcregister.cpp" />
+    <ClCompile Include="..\..\hallserver\redis\redishelper.cpp" />
+    <ClCompile Include="..\..\hallserver\redis\redismgr.cpp" />
+    <ClCompile Include="..\..\hallserver\redis\redisthread.cpp" />
+    <ClCompile Include="..\..\hallserver\redis\task\actorreadtask.cpp" />
+    <ClCompile Include="..\..\share\redis\mywin32fixes.c" />
+    <ClCompile Include="..\..\share\util\gametime.cpp" />
+    <ClCompile Include="..\..\share\util\gettimeofday.cpp" />
+    <ClCompile Include="..\..\share\util\XCommon.cpp" />
+    <ClCompile Include="..\..\share\util\XRandom.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\common\rpct2h_registergatetohall.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\common\rpch2d_registerhalltodb.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\game\rpct2h_getactors.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\game\rpch2d_queryactordb.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\game\rpct2h_createactorgate2hall.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\game\rpch2d_createactorhall2db.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\game\rpch2d_updateactordata.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\game\rpch2m_reghall2mdc.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\game\rpcc2h_startmatch.cpp" />
+    <ClCompile Include="..\..\hallserver\protocol\game\ptcc2h_cancelmatch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\hallserver\actor\actor.h" />
+    <ClInclude Include="..\..\hallserver\actor\actormgr.h" />
+    <ClInclude Include="..\..\hallserver\config.h" />
+    <ClInclude Include="..\..\hallserver\foreach.h" />
+    <ClInclude Include="..\..\hallserver\friend\friend.h" />
+    <ClInclude Include="..\..\hallserver\friend\friendmgr.h" />
+    <ClInclude Include="..\..\hallserver\hall\hallmgr.h" />
+    <ClInclude Include="..\..\hallserver\minidump.h" />
+    <ClInclude Include="..\..\hallserver\network\dblink.h" />
+    <ClInclude Include="..\..\hallserver\network\gatelink.h" />
+    <ClInclude Include="..\..\hallserver\network\mdclink.h" />
+    <ClInclude Include="..\..\hallserver\pch.h" />
+    <ClInclude Include="..\..\hallserver\hprocess.h" />
+    <ClInclude Include="..\..\hallserver\ptcregister.h" />
+    <ClInclude Include="..\..\hallserver\redis\redishelper.h" />
+    <ClInclude Include="..\..\hallserver\redis\redismgr.h" />
+    <ClInclude Include="..\..\hallserver\redis\redisthread.h" />
+    <ClInclude Include="..\..\hallserver\redis\task\actorreadtask.h" />
+    <ClInclude Include="..\..\share\redis\win32fixes.h" />
+    <ClInclude Include="..\..\share\util\gametime.h" />
+    <ClInclude Include="..\..\share\util\gettimeofday.h" />
+    <ClInclude Include="..\..\share\util\utilsingleton.h" />
+    <ClInclude Include="..\..\share\util\utilstring.h" />
+    <ClInclude Include="..\..\share\util\XCommon.h" />
+    <ClInclude Include="..\..\share\util\XRandom.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

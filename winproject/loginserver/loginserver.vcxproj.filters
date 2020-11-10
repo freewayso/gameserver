@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="protocol">
+      <UniqueIdentifier>{551e47e7-ede7-44be-83f4-27d8f082c3be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network">
+      <UniqueIdentifier>{abf9bf90-221b-42d9-9956-a977e1bd1130}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\login">
+      <UniqueIdentifier>{c52fe6d2-7e23-48ef-9564-c4a9c998c40b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="verify">
+      <UniqueIdentifier>{29b2a4a3-2309-4b3d-8163-f5105fe84d12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="table">
+      <UniqueIdentifier>{81c2af75-0421-49d2-9b97-a91368798c4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="share">
+      <UniqueIdentifier>{10548859-343c-48d2-a882-937ce48e10f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\common">
+      <UniqueIdentifier>{7a0b28c8-4d7a-4ec8-bcfd-9cbfbbf11677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="share\util">
+      <UniqueIdentifier>{39bcdf3d-697d-420e-a81c-693b20e98471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="share\profile">
+      <UniqueIdentifier>{b67b2e51-584a-4de5-9ef6-67e3877c6958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protocol\account">
+      <UniqueIdentifier>{2eba9de2-a340-4431-af0c-a96d7c581942}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="login">
+      <UniqueIdentifier>{5bbf2598-30d7-415e-8a50-35c780c5d7d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="session">
+      <UniqueIdentifier>{27ecf8f3-ca67-4632-b46b-7ef1fac6f31e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dbtask">
+      <UniqueIdentifier>{a9d66579-d159-4033-ae77-456c5a341d6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gatemgr">
+      <UniqueIdentifier>{ff50920f-41d8-4e8e-bf87-d2e2364ce656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="share\utildb">
+      <UniqueIdentifier>{5f5dcaef-36e0-4fef-8dab-004f9097a48f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\loginserver\main.cpp" />
+    <ClCompile Include="..\..\loginserver\process.cpp" />
+    <ClCompile Include="..\..\loginserver\config.cpp" />
+    <ClCompile Include="..\..\loginserver\ptcregister.cpp" />
+    <ClCompile Include="..\..\loginserver\network\clientlink.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\protocol\sendonly.cpp">
+      <Filter>protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\DBInfo.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\SQLThread.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\WebFetchThread.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\SQLStmt.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\HashUtil.cpp">
+      <Filter>share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\jsonutil.cpp">
+      <Filter>share\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\UtilEncode.cpp">
+      <Filter>share\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\XRandom.cpp">
+      <Filter>share\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\profile\profiler.cpp">
+      <Filter>share\profile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\gettimeofday.cpp">
+      <Filter>share\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\network\gatelink.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\protocol\common\rpct2l_registergate2login.cpp">
+      <Filter>protocol\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\session\sessionmgr.cpp">
+      <Filter>session</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\login\verifymgr.cpp">
+      <Filter>login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\XCommon.cpp">
+      <Filter>share\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\util\gametime.cpp">
+      <Filter>share\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\protocol\login\rpcc2l_loginreq.cpp">
+      <Filter>protocol\login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\dbtask\createactortask.cpp">
+      <Filter>dbtask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\dbtask\userauth.cpp">
+      <Filter>dbtask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\login\mysqlmgr.cpp">
+      <Filter>login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\login\mysqlthread.cpp">
+      <Filter>login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\dbtask\queryusertask.cpp">
+      <Filter>dbtask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\loginserver\dbtask\insertusertask.cpp">
+      <Filter>dbtask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\share\utildb\sqlbuilder.cpp">
+      <Filter>share\utildb</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\loginserver\pch.h" />
+    <ClInclude Include="..\..\loginserver\minidump.h" />
+    <ClInclude Include="..\..\loginserver\process.h" />
+    <ClInclude Include="..\..\loginserver\config.h" />
+    <ClInclude Include="..\..\loginserver\ptcregister.h" />
+    <ClInclude Include="..\..\loginserver\network\clientlink.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\DBInfo.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\SQLTask.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\SQLThread.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\WebFetchThread.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\SQLStmt.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\HashUtil.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\jsonutil.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\UtilEncode.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\XRandom.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\atomic.h">
+      <Filter>share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\timelist.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\profile\profiler.h">
+      <Filter>share\profile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\gettimeofday.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\loginserver\network\gatelink.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\XCommon.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\loginserver\session\sessionmgr.h">
+      <Filter>session</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\loginserver\login\verifymgr.h">
+      <Filter>login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\util\gametime.h">
+      <Filter>share\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\loginserver\dbtask\createactortask.h">
+      <Filter>dbtask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\loginserver\dbtask\userauth.h">
+      <Filter>dbtask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\loginserver\login\mysqlmgr.h">
+      <Filter>login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\loginserver\login\mysqlthread.h">
+      <Filter>login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\loginserver\dbtask\queryusertask.h">
+      <Filter>dbtask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\loginserver\dbtask\insertusertask.h">
+      <Filter>dbtask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\share\utildb\sqlbuilder.h">
+      <Filter>share\utildb</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
