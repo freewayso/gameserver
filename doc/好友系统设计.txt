@@ -1,0 +1,89 @@
+玩家数据分成两部分，第一部分是内存数据，如果能够找不到Actor就从redis那边查找
+前期方便管理，都在大厅服务，后期可以放独立出来做聊天服务器.
+1、好友管理器
+
+enum eGameState
+{
+	eGameIdleState = 1,
+	eGameTeamState = 2,
+	eGameInGameState = 3,
+	eGame7DState  = 4,
+	eGame2HState  = 5,	
+};
+
+
+class Apply
+{
+	UNT64 dwActorId;		//申请用户id
+	std::string szName;		//申请用户名字
+	UINT32 dwTime;			//申请时间
+	UINT32 dwIcon;			//固定ICON
+};
+
+class Backlist
+{
+	UNT64 dwActorId;		//申请用户id
+	std::string szName;		//申请用户名字
+	UINT32 dwTime;			//黑名单时间
+	UINT32 dwIcon;			//固定ICON
+};
+
+
+struct FriendInfo
+{
+	bool m_bChange;	//存档标签
+	UNT64 m_dwActorId;
+	std::string m_szName;
+	eGameState m_eState;
+	UINT32 dwTime;			
+};
+
+
+class Friend
+{
+public:
+	Friend()
+	{
+	
+	}
+	
+public:
+	void OnLogin();
+	void OnLogout();
+	FriendInfo *getFriendInfo();
+	void Save(CBR::Friend2Db &data);//保存好友数据
+	void Load(CBR::Friend2Db &data);//加载好友数据
+	bool DeleteApply(UINT64 actorId);// 删除申请列表
+	bool AddApply(UINT64 actorId);	//增加申请
+	bool AcceptApply(UINT64 actorId);//接受申请
+	UINT32 RemoveFriend(UINT64 actorId);//删除好友			
+private:
+	FriendInfo *m_pFriendInfo; //玩家自己的信息
+	std::vector<Apply *> m_vecApply;	   //申请列表
+	std::vector<Backlist *> m_vecBacklist; //黑名单
+	std::vector<FriendInfo *> m_vecFriendInfo; //其他好友信息
+	
+};
+
+class FriendMgr : public ITimer
+{
+	DECLARE_SINGLETON(FriendMgr)
+public
+	FriendMgr()
+	{
+	}
+	
+public:
+	virtual void OnTimer(UINT32 dwID, UINT32 dwCount);//定时器刷新定时事件
+	void OnLogin(UINT64 dwActorid);
+	void OnLogout(UINT64 dwActorid);
+	void Init();
+	void UnInit();
+	void SetState(UINT64, eGameState state);
+	Friend* GetFriend(UINT64 actorId);
+	bool DeleteFriend(UINT64 actorId);
+	void AddFriend(UINT64 actorId, Friend* pFriend);
+public:
+	std::unordered_map<UINT64, Friend*> m_id2friend;
+		
+};

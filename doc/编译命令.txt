@@ -1,0 +1,106 @@
+cmake -DCMAKE_BUILD_TYPE=Debug ../..
+cmake -DCMAKE_BUILD_TYPE=Release ../..
+
+压缩zip命令
+
+
+CMAKE_CXX_FLAGS_RELEASE
+
+SHOW VARIABLES LIKE "general_log_file%"; 
+
+
+ /var/lib/mysql/localhost.log
+ echo ""  >  
+ 
+ 
+ 
+ /home/xch/test/cbr/server/Build/Debug/bin
+
+ 
+  Execute	select AccountID,AccountName from gameuser where DeviceId
+
+zip -r lib.zip lib
+
+cd /home/xch/temp/server/lib
+cd /home/xch/temp/server/common/build/lib
+ cp -rf *.a /home/xch/temp/server/lib
+
+cd /home/xch/cbr/server/exe/lib
+ cp -rf *.a /home/xch/temp/server/lib
+cd /home/xch/temp/server/Build/Debug/bin
+
+
+
+/home/xch/cbr/server/lib
+/home/xch/cbr/server/lib
+
+cp /home/xch/cbr/server/common/build/lib/* /home/xch/cbr/server/lib
+
+cp /home/xch/cbr/server/common/build/lib/* /home/xch/cbr/server/exe/lib
+
+cp /home/xch/cbr/server/Build/Debug/bin/* /home/xch/run/exe
+cp /home/xch/cbr/server/Build/Debug/bin/client /home/xch/run/exe
+
+/home/xch/cbr/server/exe/conf/gate_conf.xml
+git push origin与git push -u origin master的区别
+
+
+sysbrench 性能测试报告
+curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.rpm.sh | sudo bash
+sudo yum -y install sysbench
+git clone https://github.com/akopytov/sysbench.git
+sysbench /home/xch/tool/sysbench/src/lua/oltp_read_write.lua --tables=3 --table_size=10000000 --mysql-user=root --mysql-password=123456 --mysql-host=192.168.129.45 --mysql-port=3306 --mysql-db=sbtest prepare
+create database sbtest;
+sysbench fileio --file-num=10 --file-total-size=10G prepare
+
+
+
+
+git 相关的好用
+git commit add 文件...
+
+
+mysqltuner 方便调优mysql性能参数
+back_log=500
+max_connections=3000
+max_user_connections=800
+thread_concurrency=64
+key_buffer_size=400M
+innodb_buffer_pool_size=1024M
+innodb_additional_mem_pool_size=20M
+innodb_log_buffer_size=20M
+query_cache_size=40M
+
+query_cache_limit=64M
+thread_cache_size=256
+key_buffer_size=16M
+join_buffer_size=2M
+max_heap_table_size=16M
+max_allowd_packet=128M
+low_priority_updates=1
+max_seeks_for_key=100
+sort_buffer_size=16M
+read_buffer_size=64M
+myisam_sort_buffer_size=64M
+tmp_table_size=64M
+read_rnd_buffer_size=1M
+open_file_limit=6050
+
+
+
+systemctl stop  mysqld.service
+systemctl start  mysqld.service
+
+第四步把loginserver的线程数调整大
+
+
+vim最好用列编辑
+ctrl + v 
+shift + i  列编辑的内容
+esc 两次就可以
+
+
+
+
+
+/home/xch/run/exe

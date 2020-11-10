@@ -1,0 +1,14 @@
+client 	----测试客户端
+common 	----基础库文件
+conf    ----配置模板
+dbserver --db服务
+exe		----生成执行文件
+gateserver ----网关服务
+hallserver  -----大厅服务
+lib			-----库文件
+loginserver -----登录服务
+protocol    -----协议文件
+share		-----公用的头文件
+thirdparty  -----三方库
+工具EXE		-----
+协议生成工具代码 ---协议工具代码

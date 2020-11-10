@@ -1,0 +1,119 @@
+1、redis 6.0后支持多线程，多线程在网络吞吐量上提升了不少
+Redis 作者 antirez 在 RedisConf 2019 分享时曾提到：Redis 6 引入的多线程 IO 特性对性能提升至少是一倍以上。
+国内也有大牛曾使用 unstable 版本在阿里云 esc 进行过测试，GET/SET 命令在 4 线程 IO 时性能相比单线程是几乎是翻倍了。
+常用的命令
+get
+set
+hget... 
+hset...
+select 1,表示选择库1
+info server 
+dbsize
+清空数据库 flushdb 
+之所不适用keys *，因为这个相当于mysql select * from ..，当线上大量的数据的，该函数是阻塞性的，会导致redisclient断开，
+解决方案采用scan,还有存储的时候可以采用批量hset的方式去做存储
+
+访问采用游标的方式去做访问
+
+127.0.0.1:6379[1]> set actor:1 1
+OK
+127.0.0.1:6379[1]> set actor:2 1
+OK
+127.0.0.1:6379[1]> set actor:3 1
+OK
+127.0.0.1:6379[1]> set actor:4 1
+OK
+127.0.0.1:6379[1]> set actor:5 1
+OK
+127.0.0.1:6379[1]> set actor:6 1
+OK
+127.0.0.1:6379[1]> set actor:7 1
+OK
+127.0.0.1:6379[1]> set actor:8 1
+OK
+127.0.0.1:6379[1]> set actor:9 1
+OK
+127.0.0.1:6379[1]> set actor:10 1
+OK
+127.0.0.1:6379[1]> set actor:11 1
+OK
+127.0.0.1:6379[1]> set actor:12 1
+OK
+127.0.0.1:6379[1]> set actor:13 1
+OK
+127.0.0.1:6379[1]> set actor:14 1
+OK
+127.0.0.1:6379[1]> set actor:15 1
+OK
+127.0.0.1:6379[1]> set actor:16 1
+OK
+127.0.0.1:6379[1]> set actor:17 1
+OK
+127.0.0.1:6379[1]> set actor:18 1
+OK
+127.0.0.1:6379[1]> set actor:19 1
+
+127.0.0.1:6379[1]> set actor:20 1
+OK
+127.0.0.1:6379[1]> set actor:21 1
+OK
+127.0.0.1:6379[1]> set actor:22 1
+OK
+127.0.0.1:6379[1]> set actor:23 1
+OK
+127.0.0.1:6379[1]> set actor:24 1
+OK
+127.0.0.1:6379[1]> set actor:25 1
+
+
+
+127.0.0.1:6379[1]> scan 0 match *actor*
+1) "1"
+2)  1) "actor:1"
+    2) "actor:25"
+    3) "actor:5"
+    4) "actor:19"
+    5) "actor:9"
+    6) "actor:4"
+    7) "actor:23"
+    8) "actor:22"
+    9) "actor:7"
+   10) "actor:15"
+第二次访问第一次访问的返回的游标作为第二次的参数
+127.0.0.1:6379[1]> scan 1 match *actor*
+1) "29"
+2)  1) "actor:11"
+    2) "actor:3"
+    3) "actor:10"
+    4) "actor:12"
+    5) "actor:24"
+    6) "actor:20"
+    7) "actor:8"
+    8) "actor:18"
+    9) "actor:2"
+   10) "actor:21"
+127.0.0.1:6379[1]> scan 29 match *actor*
+1) "0"
+2) 1) "actor:13"
+   2) "actor:17"
+   3) "actor:6"
+   4) "actor:14"
+   5) "actor:16"
+
+
+业务相关的:
+方案1
+存储标签为0表示不需要存储，存储标签为1表示，需要把数据变更mysql	
+1、服务器这边【scan 0 match *actor:1* 】扫存档标签，如果存档标签为1就，把数据写入数据库，并且把存储标签变更为0
+2、读取角色数据的时候，才用从redis这边读取，如果读取不到再从mysql读取，写入到redis【存储标签为0】，交付个业务接口适用
+3、expireat actor:1:111 unixtime
+4、角色数据变更的时候，把actor的存储标签设置为1
+5、创建角色的时候把数据丢到redis，并且存储标签为1
+
+方案2
+在redis数据记录一个存储版本号，这边生成版本号，数据写入redis的时候有版本号
+	1、正常规则的redis的版本号比数据库的新，一段时间过后redis的版本号跟数据库的版本号一致
+	2、如果出现dbserver的redis 网络断开，但是依然从内存数据同步到mysql,这时候mysql的版本号比redis的新，
+		所以同步把mysql的版本号新数据覆盖redis的数据，或者清理
+	3、如果mysql奔溃了，redis还活着，这时候内存的是最新的，等待mysql恢复，继续把内存数据回写到mysql，【这时候redis的数据版本号新于mysql】
+	4、如果redis断开了，这时候获取数据从redis去不到，从mysql 读取，内存数据同步到mysql【这时候mysql的数据版本号新于redis】
